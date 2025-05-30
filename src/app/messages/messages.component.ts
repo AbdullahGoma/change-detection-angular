@@ -9,7 +9,12 @@ import { NewMessageComponent } from './new-message/new-message.component';
   templateUrl: './messages.component.html',
   styleUrl: './messages.component.css',
   imports: [MessagesListComponent, NewMessageComponent],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush, // This tells Angular:
+  // “Only run change detection for this component if one of the following happens:
+  // An @Input() reference changes,
+  // An event happens inside the component (click, input, etc.),
+  // You explicitly call markForCheck() or detectChanges() (manually trigger detection).”
+  // Works only with immutable
 })
 export class MessagesComponent {
   messages = signal<string[]>([]);
