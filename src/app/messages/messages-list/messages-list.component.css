@@ -1,19 +1,70 @@
 :host {
   display: block;
-  max-width: 25rem;
-  margin: 3rem auto;
-  padding: 1rem;
+  max-width: 28rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
   background-color: #232826;
+  border-radius: 12px;
   border: 2px solid #3cf8a7;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  text-align: center;
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #3cf8a7 #232826;
+}
+
+ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+ul::-webkit-scrollbar-track {
+  background: #232826;
+  border-radius: 4px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background-color: #3cf8a7;
+  border-radius: 4px;
+  border: 1px solid #232826;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+  background-color: #2fd896;
 }
 
 ul li {
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
+  padding: 0.75rem 1rem;
+  background-color: rgba(60, 248, 167, 0.1);
+  border-left: 3px solid #3cf8a7;
+  border-radius: 4px;
+  color: #e0e0e0;
+  text-align: left;
+  transition: transform 0.2s ease;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  margin-right: 4px; /* Compensate for translateX */
+  box-sizing: border-box;
+  width: calc(100% - 4px); /* Account for hover movement */
+}
+
+ul li:hover {
+  transform: translateX(4px);
+}
+
+.debug-output {
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #aaa;
 }
