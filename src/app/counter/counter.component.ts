@@ -39,7 +39,7 @@ export class CounterComponent implements OnInit {
   }
 
   onDecrement() {
-    this.count.update((prevCount) => prevCount - 1);
+    this.count.set(this.count() - 1);
   }
 
   onIncrement() {
